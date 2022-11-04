@@ -68,6 +68,7 @@ export class BodyComponent implements OnInit {
           Email: this.alumnoData.get('email')?.value,
           Genero: this.alumnoData.get('genero')?.value,
           Activo: this.alumnoData.get('activo')?.value,
+          Pass:this.alumnoData.get('pass')?.value,
         }
       );
     }

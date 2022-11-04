@@ -16,6 +16,7 @@ import { AlumnosModule } from './alumnos/alumnos.module';
 import { CursosModule } from './cursos/cursos.module';
 import { ClasesModule } from './clases/clases.module';
 import { LoginModule } from './login/login.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { LoginModule } from './login/login.module';
     NavbarComponent,
     SidebarComponent,
     FontSizeDirective,
-    NotFoundComponent
+    NotFoundComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,8 @@ import { LoginModule } from './login/login.module';
     AlumnosModule,
     CursosModule,
     ClasesModule,
-    LoginModule
+    LoginModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

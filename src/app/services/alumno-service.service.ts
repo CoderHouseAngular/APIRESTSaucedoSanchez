@@ -8,8 +8,8 @@ import { Alumno } from '../models/alumno';
 export class AlumnoServiceService {
 
   listAlumnosPromise: Alumno[]=[
-    {Matricula:12,Email:'example@example.com',Nombre:'Fulanita',Apellidos:'Doe',FechaNacimiento:new Date('1999/12/25'),Genero:'femenino',Activo:true},
-    {Matricula:13,Email:'example2@example.com',Nombre:'Angel Eduardo',Apellidos:'Saucedo Sanchez',FechaNacimiento:new Date('2000/12/09'),Genero:'masculino',Activo:false},
+    {Matricula:12,Email:'example@example.com',Nombre:'Fulanita',Apellidos:'Doe',FechaNacimiento:new Date('1999/12/25'),Genero:'femenino',Activo:true,Pass:'123'},
+    {Matricula:13,Email:'example2@example.com',Nombre:'Angel Eduardo',Apellidos:'Saucedo Sanchez',FechaNacimiento:new Date('2000/12/09'),Genero:'masculino',Activo:false,Pass:'123'},
     ];
    
       constructor() { 
