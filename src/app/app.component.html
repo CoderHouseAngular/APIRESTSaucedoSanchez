@@ -1,0 +1,10 @@
+<div class="grid-content">
+  <app-sidebar (sender)="receiver($event)" class="grid-menu"></app-sidebar>
+  <app-navbar [title]="subTitle"  class="grid-header"></app-navbar>
+  <div class="grid-body">
+
+    <router-outlet></router-outlet>
+  </div>
+
+</div>
+

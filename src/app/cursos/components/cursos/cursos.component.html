@@ -1,0 +1,70 @@
+<div class="body-container row">
+
+    <div class="alumnos-form col-md-12">
+        <form [formGroup]="cursoData" (ngSubmit)="crudCursos()">
+            <div class="row">
+                <div class="form-group col-md-5">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" formControlName="nombre">
+                    <input type="hidden" class="form-control" id="id" formControlName="id" value="0">
+                </div>
+               
+               
+            </div>
+          
+           
+            <button type="submit" class="btn btn-info" [disabled]="cursoData.invalid" >{{crudButtonText}}</button>
+
+        </form>
+    </div>
+    <div class="alumnos-list col-md-12">
+
+        <table mat-table [dataSource]="CursosSource" class="col-md-12">
+          
+            <ng-container matColumnDef="genero" >
+                <th mat-header-cell *matHeaderCellDef appFontSize>Genero</th>
+                <td mat-cell *matCellDef="let alumno" class="td-image">
+                    <div  *ngIf="alumno.Genero=='masculino'; then thenBlock else elseBlock"></div>
+                    <ng-template #thenBlock><img title="icon" src="https://cdn2.iconfinder.com/data/icons/avatars-2-7/128/20-512.png"/></ng-template>
+                    <ng-template #elseBlock><img title="icon" src="https://cdn2.iconfinder.com/data/icons/avatars-2-7/128/27-512.png"/> </ng-template>                
+                </td>
+                
+            </ng-container>  
+
+            <ng-container matColumnDef="id" >
+                <th mat-header-cell *matHeaderCellDef appFontSize>Id</th>
+                <td mat-cell *matCellDef="let curso">{{curso.Id}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="nombre" >
+                <th mat-header-cell *matHeaderCellDef appFontSize>Nombre</th>
+                <td mat-cell *matCellDef="let curso">{{curso.Nombre }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="clases" >
+                <th mat-header-cell *matHeaderCellDef appFontSize>Cursos</th>
+                <td mat-cell *matCellDef="let curso">
+                    <div *ngFor="let clase of curso.Clases">
+                        {{clase.Nombre}}
+                    </div>
+                </td>
+                <ng-container matColumnDef="acciones" >
+                    <th mat-header-cell *matHeaderCellDef appFontSize>Acciones</th>
+                    <td mat-cell *matCellDef="let curso">
+                        <button mat-icon-button (click)="editCurso(curso.Id)">
+                            <mat-icon title="Editar">edit</mat-icon>
+                        </button>
+                        <button mat-icon-button (click)="deleteCurso(curso.Id)">
+                            <mat-icon title="Borrar">delete</mat-icon>
+                        </button>
+                    </td>
+                </ng-container>
+            </ng-container>
+
+            
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+
+    </div>
+</div>

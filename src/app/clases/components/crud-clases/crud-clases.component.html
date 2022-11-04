@@ -1,0 +1,62 @@
+<div class="body-container row">
+
+    <div class="alumnos-form col-md-12">
+        <form [formGroup]="claseData" (ngSubmit)="crudClase()">
+            <div class="row">
+                <div class="form-group col-md-5">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" formControlName="nombre">
+                    <input type="hidden" class="form-control" id="id" formControlName="id" value="0">
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="form-group col-md-5">
+                    <label for="nombre" class="form-label">Dia</label>
+                    <input type="date" class="form-control" id="dia" formControlName="dia">
+                </div>  
+            </div>
+
+           
+            <button type="submit" class="btn btn-info" [disabled]="claseData.invalid" >{{crudButtonText}}</button>
+
+        </form>
+    </div>
+    <div class="alumnos-list col-md-12">
+
+        <table mat-table [dataSource]="clasesSource" class="col-md-12">
+          
+
+            <ng-container matColumnDef="id" >
+                <th mat-header-cell *matHeaderCellDef appFontSize>Id</th>
+                <td mat-cell *matCellDef="let clase">{{clase.Id}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="nombre" >
+                <th mat-header-cell *matHeaderCellDef appFontSize>Nombre</th>
+                <td mat-cell *matCellDef="let clase">{{clase.Nombre}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="dia" >
+                <th mat-header-cell *matHeaderCellDef appFontSize>Fecha</th>
+                <td mat-cell *matCellDef="let clase">{{clase.Dia}}</td>
+            </ng-container>
+            <ng-container matColumnDef="acciones" >
+                <th mat-header-cell *matHeaderCellDef appFontSize>Acciones</th>
+                <td mat-cell *matCellDef="let clase">
+                    <button mat-icon-button (click)="editClase(clase.Id)">
+                        <mat-icon title="Editar">edit</mat-icon>
+                    </button>
+                    <button mat-icon-button (click)="deleteClase(clase.Id)">
+                        <mat-icon title="Borrar">delete</mat-icon>
+                    </button>
+                </td>
+            </ng-container>
+            
+            
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+
+    </div>
+</div>
