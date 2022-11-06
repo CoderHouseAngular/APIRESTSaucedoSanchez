@@ -1,17 +1,18 @@
-<form>
-    <!-- Email input -->
+<div class="login-container">
+  <form class="login-form" [formGroup]="alumnoData" (ngSubmit)="login()"> 
+
     <div class="form-outline mb-4">
-      <input type="email" id="email" name="email" class="form-control" />
-      <label class="form-label" for="form2Example1">Email address</label>
+      
+      
+      <label class="form-label" >Matricula (1 al 6)</label>
+      <input type="text" id="matricula" name="matricula" class="form-control" formControlName="matricula" />
+      <label class="form-label" >EndPoint: https://635b17776f97ae73a63caff7.mockapi.io/angular/alumnos</label>
+      <div class="error" *ngIf="alumnoData.get('matricula')?.errors?.['matricula']">
+        <small class="error">Se requiere la matricula</small>
+    </div>    
     </div>
-  
-    <!-- Password input -->
-    <div class="form-outline mb-4">
-      <input type="password" id="pass" name="pass" class="form-control" />
-      <label class="form-label" for="form2Example2">Password</label>
-    </div>
-  
-    <!-- 2 column grid layout for inline styling -->
+
+
     <div class="row mb-4">
       <div class="col d-flex justify-content-center">
       
@@ -19,9 +20,10 @@
     
     </div>
   
-    <!-- Submit button -->
-    <button type="button" class="btn btn-primary btn-block mb-4">Sign in</button>
+
+    <button type="submit" class="btn btn-primary btn-block mb-4">Login</button>
   
   
     </div>
   </form>
+</div>
