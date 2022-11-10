@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AlumnosRoutingModule } from './alumnos-routing.module';
-import { BodyComponent } from './components/body/body.component';
+import { BodyComponent } from '../feature/body/body.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NombreCompletoPipe } from '../pipes/NombreCompletoPipe';
@@ -19,7 +19,6 @@ import { MaterialModule } from '../material.module';
     CommonModule,
     ReactiveFormsModule,
     AlumnosRoutingModule,
-    BrowserAnimationsModule,
     SharedModule,
     MaterialModule
   ]

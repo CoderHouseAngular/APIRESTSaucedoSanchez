@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ClasesRoutingModule } from './clases-routing.module';
-import { CrudClasesComponent } from './components/crud-clases/crud-clases.component';
+import { CrudClasesComponent } from '../feature/crud-clases/crud-clases.component';
 import { SharedModule } from '../shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AlumnosRoutingModule } from '../alumnos/alumnos-routing.module';
@@ -18,7 +18,6 @@ import { MaterialModule } from '../material.module';
     CommonModule,
     ReactiveFormsModule,
     AlumnosRoutingModule,
-    BrowserAnimationsModule,
     SharedModule,
     ClasesRoutingModule,
     MaterialModule,

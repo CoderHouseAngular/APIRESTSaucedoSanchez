@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { CursosServiceService } from 'src/app/services/cursos-service.service';
-import { Curso } from '../../../models/cursos';
+import { Curso } from '../../models/cursos';
 
 @Component({
   selector: 'app-cursos',

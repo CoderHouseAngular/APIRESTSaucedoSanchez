@@ -3,7 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Alumno } from 'src/app/models/alumno';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { formatDate } from '@angular/common';
-import { AlumnoServiceService } from '../../../services/alumno-service.service';
+import { AlumnoServiceService } from '../../services/alumno-service.service';
 
 
 @Component({
